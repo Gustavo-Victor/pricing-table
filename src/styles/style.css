@@ -1,0 +1,253 @@
+/*variables*/
+:root {
+    --yellow: #ffcc29;
+    --blue: #1d539e;
+    --gray: #828799;
+    --page-background: #f9fbfc;
+}
+
+/*reset*/
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body*/
+body {
+    background-color: var(--page-background); 
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100vh; 
+}
+
+
+/*main*/
+.container {
+    width: 100%;    
+    height: 100%; 
+}
+
+/*heading*/
+.heading {
+    background-color: var(--blue);
+    color: white; 
+    min-height: 55%;
+    /* max-height: 700px; */
+    text-align: center;
+    padding: 2.5rem 0 5rem; 
+}
+
+.heading h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+.heading p {
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 35%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+
+/*princing*/
+.princing {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto; 
+    position: relative;
+}
+
+.princing .cards {
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    position: absolute;
+    top: -8.5rem;
+    padding-bottom: 2rem; 
+}
+
+.princing .cards  .card {
+    max-width: 320px;
+    background-color: white;
+    border-radius: 7px; 
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+    position: relative;
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+
+.princing .cards .card .card-type {
+    font-weight: bold; 
+    font-size: 1.1rem;
+    padding: 1.5rem 2rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.princing .cards .card .card-price {
+    margin-bottom: 0.7rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding-left: 2rem;
+
+}
+
+.princing  .cards .card .card-price .price-small {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.princing .cards .card .card-price .month {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--gray); 
+}
+
+.princing .cards  .card .card-description {
+    color: var(--gray);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding-left: 2rem;
+}
+
+.princing .cards  .card .card-description + hr {
+    width: 80%;
+    margin: 0 auto; 
+    outline: 0;
+    border: 1px solid rgb(200,200,200,0.6); 
+}
+
+
+.princing  .cards .card .card-services { 
+    margin-top: 0.8rem;     
+    list-style-position: inside;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0 2rem;
+}
+
+.princing .cards  .card .card-services .card-service{
+    font-size: 0.9rem;
+    color: gray; 
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.princing .cards  .card .card-services .card-service img {
+    width: 12px;
+    height: auto;
+}
+
+/*buttons*/
+.princing .cards .card .card-cta{
+    width: 100%;
+    padding: 12px 10px; 
+    text-transform: uppercase;
+    background-color: white; 
+    color: var(--blue); 
+    border: 1px solid var(--blue); 
+    border-radius: 7px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.princing .cards .card .card-cta:hover {
+    opacity: 0.8;
+}
+
+/*suggested card*/
+.princing .cards .card.suggested {
+    min-height: 420px; 
+    top: -10px;
+}
+
+.princing .cards .card.suggested .card-type{
+    background-color: var(--yellow);
+    border-radius: 7px 7px 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.princing .cards .card.suggested .card-type .type-description{
+    padding: 7px 10px;
+    width: 80px;
+    text-align: center; 
+    background-color: var(--blue);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: white;
+    border-radius: 20px;
+}
+
+.princing .cards .card.suggested .card-cta {
+    background-color: var(--blue); 
+    color: white; 
+    border: none; 
+    border-radius: 7px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+
+/*media queries*/
+@media (max-width: 1100px) {
+    .heading {
+        min-height: 250px;
+    }
+
+    .princing .cards {        
+        top: -3.5rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .princing .cards .card.suggested { 
+        top: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .heading p {
+        text-align: center;
+        margin: 0 auto; 
+        max-width: 80%;
+    }
+
+    .princing .cards {        
+        top: -3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .heading h1 { 
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 300px) { 
+    .princing .cards .card:nth-child(3) .card-cta{
+        margin-top: 1rem;
+    }
+
+}
